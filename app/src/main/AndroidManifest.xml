@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".VMain" android:label="MaggieShop"></activity>
+
     </application>
 
 </manifest>
