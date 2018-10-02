@@ -51,6 +51,8 @@
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="35dp"
+                android:id="@+id/nombre_addcategoria"
+                android:padding="3dp"
                 android:background="@drawable/borderfield"/>
 
 
@@ -74,6 +76,8 @@
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="65dp"
+                android:padding="3dp"
+                android:id="@+id/des_addcategoria"
                 android:background="@drawable/borderfield"/>
 
 
@@ -91,6 +95,7 @@
                 android:layout_height="25dp"
                 android:background="@drawable/background_buttons"
                 android:text="Guardar"
+                android:id="@+id/guardar_addcategoria"
                 android:textColor="@color/blanco"/>
 
         </LinearLayout>

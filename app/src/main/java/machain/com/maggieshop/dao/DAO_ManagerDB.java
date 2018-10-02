@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 
 import machain.com.maggieshop.utils.MaggieBD;
@@ -16,7 +17,7 @@ public class DAO_ManagerDB {
     String sql="";
 
     public DAO_ManagerDB(Context context) {
-        maggieDB = new MaggieBD(context,"CognoEscolarDB",null,2);
+        maggieDB = new MaggieBD(context,"CognoEscolarDB",null,1);
         bd = maggieDB.getWritableDatabase();
         values = new ContentValues();
     }
@@ -50,6 +51,11 @@ public class DAO_ManagerDB {
         bd.execSQL(sql);
     }
 
+    public void actualizastring(String tabla, String campo, String valor){
+        sql = "UPDATE " + tabla + " SET " + campo + "='" + valor + "' " ;
+        bd.execSQL(sql);
+    }
+
     public SQLiteDatabase getBd() {
         return bd;
     }
@@ -80,10 +86,12 @@ public class DAO_ManagerDB {
     }
 
     public boolean ejecutaselect(String tabla, String campos) throws Exception {
-        boolean res=false;
+        boolean res = false;
         sql = "select " + campos + " from " + tabla;
+
         fila = ejecutasentencia();
         if (fila.moveToFirst() && fila.getCount()>0) res = true;
+
         return res;
     }
 

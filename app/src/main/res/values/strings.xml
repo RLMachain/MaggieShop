@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MaggieShop</string>
+
+    <string-array name="categoriasdefault">
+        <item>Playeras</item>
+        <item>Blusas</item>
+        <item>Vestidos</item>
+        <item>Chamarras</item>
+        <item>Camisas</item>
+        <item>Pantalones</item>
+        <item>Sueters</item>
+        <item>Pans</item>
+        <item>Mallas</item>
+        <item>Short's</item>
+        <item>Chalecos</item>
+    </string-array>
 </resources>
