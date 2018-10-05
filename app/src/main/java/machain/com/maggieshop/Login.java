@@ -36,7 +36,7 @@ public class Login extends Activity {
 
         dao_usuario = new DAO_Usuario(this);
         //dao_usuario.vaciarBD();
-        //dao_usuario.generarUsuario();
+        dao_usuario.generarUsuario();
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override

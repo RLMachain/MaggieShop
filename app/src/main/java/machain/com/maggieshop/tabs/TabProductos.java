@@ -12,10 +12,15 @@ import android.view.ViewGroup;
 import machain.com.maggieshop.R;
 import machain.com.maggieshop.categoria.AgregarCategoria;
 import machain.com.maggieshop.categoria.IndexCategoria;
+import machain.com.maggieshop.dao.DAO_Producto;
+import machain.com.maggieshop.data.DATA_Producto;
 import machain.com.maggieshop.producto.AgregarProducto;
 
 public class TabProductos extends Fragment {
     FloatingActionButton fab;
+
+    DATA_Producto productos[];
+    DAO_Producto dao_producto;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,6 +33,15 @@ public class TabProductos extends Fragment {
                 irA(new Intent( getContext(), AgregarProducto.class));
             }
         });
+
+        dao_producto = new DAO_Producto(getContext());
+        productos = dao_producto.getProductos();
+
+        if (productos != null && productos.length > 0){
+            for (int i = 0; i<productos.length; i++){
+                escribirenconsola(productos[i].getNombre());
+            }
+        }
 
         return rootView;
     }

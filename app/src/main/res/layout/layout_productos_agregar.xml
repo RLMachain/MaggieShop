@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryBackgroun">
+    android:background="@color/blanco">
 
     !--header-->
     <LinearLayout
@@ -35,7 +35,7 @@
             android:layout_height="fill_parent"
             android:orientation="vertical">
 
-            <!-- ocupacion-->
+            <!-- categoria-->
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -86,12 +86,14 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/borderfield"
-                    android:padding="3dp">
+                    android:padding="1dp">
 
                     <EditText
                         android:layout_width="fill_parent"
                         android:layout_height="35dp"
-                        android:background="@drawable/backedit_noborders"/>
+                        android:textColor="@color/colorPrimary"
+                        android:background="@drawable/backedit_noborders"
+                        android:id="@+id/nombre_addproducto"/>
 
                 </LinearLayout>
 
@@ -117,44 +119,13 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/borderfield"
-                    android:padding="3dp">
+                    android:padding="1dp">
 
                     <EditText
                         android:layout_width="fill_parent"
                         android:layout_height="70dp"
-                        android:background="@drawable/backedit_noborders"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- existencia-->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:layout_gravity="center"
-                android:gravity="left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:paddingRight="5dp"
-                    android:text="Existencia:"
-                    android:textColor="@color/colorPrimary"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borderfield"
-                    android:padding="3dp">
-
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="35dp"
+                        android:id="@+id/des_addproducto"
+                        android:textColor="@color/colorPrimary"
                         android:background="@drawable/backedit_noborders"/>
 
                 </LinearLayout>
@@ -190,11 +161,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/borderfield"
-                        android:padding="3dp">
+                        android:paddingTop="1dp"
+                        android:paddingRight="1dp"
+                        android:paddingBottom="1dp"
+                        android:paddingLeft="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"
+                            android:textColor="@color/colorPrimary"/>
 
                         <EditText
                             android:layout_width="120dp"
                             android:layout_height="35dp"
+                            android:id="@+id/costo_addproducto"
+                            android:textColor="@color/colorPrimary"
+                            android:textAlignment="center"
                             android:background="@drawable/backedit_noborders"/>
 
                     </LinearLayout>
@@ -223,11 +206,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/borderfield"
-                        android:padding="3dp">
+                        android:paddingTop="1dp"
+                        android:paddingRight="1dp"
+                        android:paddingBottom="1dp"
+                        android:paddingLeft="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"
+                            android:textColor="@color/colorPrimary"/>
 
                         <EditText
                             android:layout_width="120dp"
                             android:layout_height="35dp"
+                            android:id="@+id/precio_addproducto"
+                            android:textColor="@color/colorPrimary"
                             android:background="@drawable/backedit_noborders"/>
 
                     </LinearLayout>
@@ -236,6 +230,56 @@
 
             </LinearLayout>
 
+            <!-- existencia-->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="10dp"
+                android:layout_gravity="center"
+                android:gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingRight="5dp"
+                    android:text="Existencia: 0"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/existencia_addproducto"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:id="@+id/btnmenosexistencia_addproducto"
+                        android:src="@mipmap/ic_icon_menos"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:id="@+id/btnmasexistencia_addproducto"
+                        android:src="@mipmap/ic_icon_mas"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--btn-->
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -249,7 +293,7 @@
                     android:text="GUARDAR"
                     android:textColor="@color/blanco"
                     android:background="@drawable/background_buttons"
-                    android:id="@+id/btnlogin"/>
+                    android:id="@+id/guardar_addproducto"/>
 
             </LinearLayout>
 
