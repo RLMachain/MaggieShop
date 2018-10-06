@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".VMain" android:label="MaggieShop"></activity>
+        <activity android:name=".VMain" android:label="MaggieShop" ></activity>
 
         <activity android:name=".categoria.IndexCategoria" android:label="@string/app_name"></activity>
         <activity android:name=".categoria.AgregarCategoria" android:label="@string/app_name"></activity>
